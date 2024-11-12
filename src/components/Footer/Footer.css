@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__dev,
+.footer__year {
+  margin: 0;
+  font-family: "CabinetGrotesk-Medium", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
