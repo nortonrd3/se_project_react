@@ -1,0 +1,104 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; Turn this off later */
+}
+
+.modal__title {
+  margin: 0 0 24px;
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../../assets/close-button.svg");
+  background-repeat: no-repeat;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.modal__content {
+  background-color: #fff;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.modal__label {
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__input {
+  display: block;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
+
+.modal__input::placeholder {
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__legend {
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.modal__radio-buttons {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label_type_radio {
+  margin-bottom: 8px;
+}
+
+.modal__submit {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 4px;
+  width: 124px;
+  height: 36px;
+  cursor: pointer;
+}
