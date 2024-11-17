@@ -4,6 +4,7 @@
     height: 80px;
     border-radius: 12px;
     overflow: hidden;
+    font-family: "CabinetGrotesk-Bold", Courier, monospace;
 }
 
 .weather-card__temp {
@@ -13,7 +14,6 @@
     position: absolute;
     top: 20px;
     left: 16px;
-    font-family: "CabinetGrotesk-Bold", Courier, monospace;
     color: #fff;
 }
 

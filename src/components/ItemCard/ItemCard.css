@@ -5,6 +5,7 @@
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
 }
 
 .card__title {
@@ -13,7 +14,6 @@
   margin: 0;
   padding: 2px 12px;
   border-radius: 4px;
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
   opacity: 60%;

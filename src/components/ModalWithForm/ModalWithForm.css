@@ -11,6 +11,7 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  font-family: "CabinetGrotesk-Bold", Courier, monospace;
 }
 
 .modal_opened {
@@ -21,7 +22,6 @@
 
 .modal__title {
   margin: 0 0 24px;
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
 }
@@ -51,7 +51,6 @@
 }
 
 .modal__label {
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
 }
@@ -69,7 +68,6 @@
 }
 
 .modal__input::placeholder {
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
 }
@@ -81,7 +79,6 @@
 }
 
 .modal__legend {
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 12px;
@@ -94,13 +91,17 @@
   flex-direction: column;
 }
 
+.modal__radio-option {
+  margin-bottom: 8px;
+}
+
 .modal__radio-input {
   accent-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  margin-right: 8px;
 }
 
 .modal__label_type_radio {
-  margin-bottom: 8px;
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -112,7 +113,6 @@
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   color: #fff;
-  font-family: "CabinetGrotesk-Bold", Courier, monospace;
   font-size: 16px;
   line-height: 20px;
   border-radius: 4px;
