@@ -104,7 +104,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__label_type_radio + .modal__radio-input:checked {
+.modal__radio-input:checked + .modal__label_type_radio {
   color: rgba(0, 0, 0, 1);
 }
 
