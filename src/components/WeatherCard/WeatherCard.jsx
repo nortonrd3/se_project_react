@@ -15,7 +15,7 @@ function WeatherCard({ weatherData }) {
   return (
     <section className="weather-card">
       <p className="weather-card__temp">
-        {weatherData.temp.F.toFixed(1)} &deg; F
+        {Math.round(weatherData.temp.F)} &deg; F
       </p>
       {weatherOptionUrl && (
         <img
