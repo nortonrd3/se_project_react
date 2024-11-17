@@ -8,7 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* display: none; Turn this off later */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .modal__title {

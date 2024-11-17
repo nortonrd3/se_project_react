@@ -16,6 +16,7 @@
   border: none;
   background-color: transparent;
   font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  cursor: pointer;
 }
 
 .header__date-location {
