@@ -32,21 +32,6 @@ function App() {
     setActiveModal("");
   };
 
-  const handleEscapePress = (event) => {
-    if (event.key === "Escape") {
-      closeActiveModal();
-    }
-  };
-
-  const handleOutsideClick = (event) => {
-    if (
-      event.target.classList.contains("modal_opened") &&
-      !event.target.closest(".modal__content")
-    ) {
-      closeActiveModal();
-    }
-  };
-
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -59,12 +44,24 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const handleEscapePress = (event) => {
+      if (event.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    const handleOutsideClick = (event) => {
+      if (
+        event.target.classList.contains("modal_opened") &&
+        !event.target.closest(".modal__content")
+      ) {
+        closeActiveModal();
+      }
+    };
+
     if (activeModal) {
       document.addEventListener("keydown", handleEscapePress);
       document.addEventListener("mousedown", handleOutsideClick);
-    } else {
-      document.removeEventListener("keydown", handleEscapePress);
-      document.removeEventListener("mousedown", handleOutsideClick);
     }
 
     return () => {
@@ -84,6 +81,7 @@ function App() {
         title="New garment"
         buttonText="Add garment"
         activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         closeActiveModal={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
@@ -106,7 +104,7 @@ function App() {
         </label>
         <fieldset className="modal__radio-buttons">
           <legend className="modal__legend">Select the weather type:</legend>
-          
+
           <div className="modal__radio-option">
             <input
               id="hot"
@@ -114,11 +112,14 @@ function App() {
               className="modal__radio-input"
               name="weather"
             />
-            <label htmlFor="hot" className="modal__label modal__label_type_radio">
+            <label
+              htmlFor="hot"
+              className="modal__label modal__label_type_radio"
+            >
               Hot
             </label>
           </div>
-          
+
           <div className="modal__radio-option">
             <input
               id="warm"
@@ -126,11 +127,14 @@ function App() {
               className="modal__radio-input"
               name="weather"
             />
-            <label htmlFor="warm" className="modal__label modal__label_type_radio">
+            <label
+              htmlFor="warm"
+              className="modal__label modal__label_type_radio"
+            >
               Warm
             </label>
           </div>
-          
+
           <div className="modal__radio-option">
             <input
               id="cold"
@@ -138,7 +142,10 @@ function App() {
               className="modal__radio-input"
               name="weather"
             />
-            <label htmlFor="cold" className="modal__label modal__label_type_radio">
+            <label
+              htmlFor="cold"
+              className="modal__label modal__label_type_radio"
+            >
               Cold
             </label>
           </div>
