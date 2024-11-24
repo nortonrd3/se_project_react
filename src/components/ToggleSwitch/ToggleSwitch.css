@@ -1,0 +1,55 @@
+.toggleSwitch {
+  display: flex;
+  position: relative;
+}
+
+.toggleSwitch__box {
+  border-radius: 25px;
+  border: 2px solid #7e7e7e;
+  width: 50px;
+  height: 30px;
+  appearance: none;
+  background-color: white;
+  position: relative;
+}
+
+.toggleSwitch__slider {
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.toggleSwitch__slider-F {
+  transform: translateX(20px);
+}
+
+.toggleSwitch__slider-C {
+  transform: translateX(0);
+}
+
+.toggleSwitch__temp-C {
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  color: white;
+}
+
+.toggleSwitch__temp-F {
+  position: absolute;
+  top: -10px;
+  left: 31px;
+  color: white;
+}
+
+.toggleSwitch__active {
+  color: white;
+  font-size: 16px;
+}

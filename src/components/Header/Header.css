@@ -3,6 +3,7 @@
   align-items: center;
   padding: 32px 0 28px;
   font-family: "CabinetGrotesk-Bold", Courier, monospace;
+  justify-content: space-between;
 }
 
 .header__logo {
@@ -25,11 +26,17 @@
   line-height: 24px;
 }
 
+.header__date-container {
+  display: flex;
+  align-items: center;
+}
+
 .header__user-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 
 .header__username {
   margin: 0;
