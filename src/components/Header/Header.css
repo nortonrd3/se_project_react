@@ -37,9 +37,19 @@
   gap: 12px;
 }
 
+.header__user-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.header__user-link:visited {
+  color: inherit;
+}
+
 
 .header__username {
-  margin: 0;
+  margin: 0 12px 0 0;
   font-size: 20px;
   line-height: 24px;
 }
