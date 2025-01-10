@@ -11,6 +11,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { getItems, addClothingItem, deleteClothingItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -22,7 +23,8 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -39,8 +41,28 @@ function App() {
 
   const handleAddItemSubmit = (values) => {
     console.log(values);
+    addClothingItem(values)
+      .then((data) => {
+        setClothingItems([...clothingItems, data]);
+        closeActiveModal();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     // console.log(e.target);
-  }
+  };
+
+  const handleDeleteItem = (id) => {
+    deleteClothingItem(id)
+      .then(() => {
+        const updatedItems = clothingItems.filter((item) => item.id !== id);
+        setClothingItems(updatedItems);
+        closeActiveModal();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") {
@@ -55,6 +77,17 @@ function App() {
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+        // set the clothing items
       })
       .catch((err) => {
         console.error(err);
@@ -90,12 +123,27 @@ function App() {
 
   return (
     <div className="page">
-      <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, handleToggleSwitchChange}}>
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      >
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
           <Routes>
-           <Route path="/" element={<Main weatherData={weatherData} handleCardClick={handleCardClick} />} />
-           <Route path="/profile" element={<Profile handleCardClick={handleCardClick} />} />
+            {/* To do: pass clothingItems prop to main component */}
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={<Profile handleCardClick={handleCardClick} clothingItems={clothingItems} handleAddClick={handleAddClick} />}
+            />
           </Routes>
           <Footer />
         </div>
@@ -108,6 +156,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           closeActiveModal={closeActiveModal}
+          handleDeleteItem={handleDeleteItem}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

@@ -10,11 +10,29 @@
     width: 100%;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
+    max-height: 498px;
   }
 
   .modal__footer {
     padding: 20px 32px 32px;
   }
+
+  .modal__footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal__deleteBtn {
+    background-color: transparent;
+    border: none;
+    color: #FF4D00;
+    cursor: pointer;
+    padding: 0;
+    font-size: 20px;
+    line-height: 24px;
+    align-self: start;
+  }
+
 
   .modal__caption {
     margin: 0 0 12px;

@@ -24,4 +24,5 @@
   width: 100%;
   overflow: hidden;
   border-radius: 19px;
+  max-height: 323px;
 }
