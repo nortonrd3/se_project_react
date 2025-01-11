@@ -6,7 +6,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
@@ -40,7 +39,7 @@ function App() {
   };
 
   const handleAddItemSubmit = (values) => {
-    console.log(values);
+    // console.log(values);
     addClothingItem(values)
       .then((data) => {
         setClothingItems([...clothingItems, data]);
@@ -55,7 +54,7 @@ function App() {
   const handleDeleteItem = (id) => {
     deleteClothingItem(id)
       .then(() => {
-        const updatedItems = clothingItems.filter((item) => item.id !== id);
+        const updatedItems = clothingItems.filter((item) => item._id !== id);
         setClothingItems(updatedItems);
         closeActiveModal();
       })
@@ -129,7 +128,6 @@ function App() {
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
           <Routes>
-            {/* To do: pass clothingItems prop to main component */}
             <Route
               path="/"
               element={

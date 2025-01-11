@@ -1,4 +1,5 @@
-import "./ItemModal.css";
+import "../ModalWithForm/ModalWithForm.css";
+
 
 function ItemModal({ activeModal, card, closeActiveModal, handleDeleteItem }) {
   return (
@@ -13,7 +14,7 @@ function ItemModal({ activeModal, card, closeActiveModal, handleDeleteItem }) {
         <div className="modal__footer">
           <div className="modal__footer-container">
           <h2 className="modal__caption">{card.name}</h2>
-          <button type="button" className="modal__deleteBtn" onClick={handleDeleteItem}>Delete item</button>
+          <button type="button" className="modal__deleteBtn" onClick={() => handleDeleteItem(card._id)}>Delete item</button>
           </div>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
