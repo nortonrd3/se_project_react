@@ -31,8 +31,16 @@
   transform: translateX(20px);
 }
 
+.toggleSwitch__slider-F:hover {
+  transform: translateX(18px);
+}
+
 .toggleSwitch__slider-C {
   transform: translateX(0);
+}
+
+.toggleSwitch__slider-C:hover {
+  transform: translateX(2px);
 }
 
 .toggleSwitch__temp-C {
@@ -40,6 +48,14 @@
   top: -10px;
   left: 9px;
   color: white;
+}
+
+.toggleSwitch__temp-C.false {
+  display: none;
+}
+
+.toggleSwitch__temp-F.false {
+  display: none;
 }
 
 .toggleSwitch__temp-F {
@@ -53,3 +69,4 @@
   color: white;
   font-size: 16px;
 }
+
