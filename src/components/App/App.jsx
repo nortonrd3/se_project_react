@@ -42,7 +42,7 @@ function App() {
     // console.log(values);
     addClothingItem(values)
       .then((data) => {
-        setClothingItems([...clothingItems, data]);
+        setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
       .catch((err) => {

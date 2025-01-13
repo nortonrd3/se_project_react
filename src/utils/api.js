@@ -30,4 +30,4 @@ function deleteClothingItem(id) {
         .then(processResponse);
 }
 
-export {getItems, addClothingItem, deleteClothingItem};
+export {getItems, addClothingItem, deleteClothingItem, processResponse};

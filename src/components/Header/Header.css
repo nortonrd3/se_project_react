@@ -12,9 +12,10 @@
 }
 
 .header__add-clothes-button {
-  margin: 0 20px 0 auto;
+  margin: 0;
   font-size: 20px;
   line-height: 24px;
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -34,7 +35,7 @@
 .header__user-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .header__user-link {
