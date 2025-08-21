@@ -121,6 +121,26 @@
   cursor: pointer;
 }
 
+.modal__button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.modal__additional-content {
+  margin-left: 16px;
+}
+
+.modal__link-button {
+  background: none;
+  border: none;
+  opacity: 50%;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
 .modal__content_type_image {
   padding: 0;
   width: 100%;
