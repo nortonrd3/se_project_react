@@ -47,24 +47,24 @@ const LoginModal = ({
         </button>
       }
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="login-email" className="modal__label">
         Email{" "}
         <input
           type="email"
           className="modal__input"
-          id="email"
+          id="login-email"
           value={email}
           onChange={handleEmailChange}
           placeholder="Email"
           required
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="login-password" className="modal__label">
         Password{" "}
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="login-password"
           value={password}
           onChange={handlePasswordChange}
           placeholder="Password"
