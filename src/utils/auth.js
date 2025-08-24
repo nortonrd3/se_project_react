@@ -1,11 +1,6 @@
-const BASE_URL = "http://localhost:3001";
+import { processResponse } from "./api";
 
-function processResponse(res) {
-  if (!res.ok) {
-    throw new Error(res.statusText);
-  }
-  return res.json();
-}
+const BASE_URL = "http://localhost:3001";
 
 export function signUp({ name, avatar, email, password }) {
   return fetch(`${BASE_URL}/signup`, {
