@@ -1,9 +1,11 @@
 import { processResponse } from "./api";
 
-const BASE_URL = "http://localhost:3001";
+const baseUrl = process.env.NODE_ENV === "production" 
+  ? "https://api.wtwrapp.csproject.org"
+  : "http://localhost:3001";
 
 export function signUp({ name, avatar, email, password }) {
-  return fetch(`${BASE_URL}/signup`, {
+  return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -14,7 +16,7 @@ export function signUp({ name, avatar, email, password }) {
 }
 
 export function signIn({ email, password }) {
-  return fetch(`${BASE_URL}/signin`, {
+  return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,7 +26,7 @@ export function signIn({ email, password }) {
 }
 
 export function checkToken(token) {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -36,7 +38,7 @@ export function checkToken(token) {
 }
 
 export function updateProfile({ name, avatar }, token) {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

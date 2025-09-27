@@ -11,3 +11,27 @@ html {
   margin: 0 auto;
   padding: 0 20px 24px;
 }
+
+@media (min-width: 1440px) {
+  .page__content {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .page__content {
+    max-width: 1800px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .page__content {
+    max-width: 2200px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .page__content {
+    max-width: 3000px;
+  }
+}

@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwrapp.csproject.org"
+    : "http://localhost:3001";
 
 function processResponse(res) {
   if (!res.ok) {
